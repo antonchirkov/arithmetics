@@ -1,0 +1,414 @@
+html{
+  width: 100%; max-width: 100%; height:100%;
+}
+body{
+  width: 100%; height: 100%;
+  background: #f0f2fa; font-family:serif; margin:auto; padding:0;
+  -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; user-select: none;
+  padding:0;
+}
+font{
+  font-weight: normal; color:black; font-size:9px;
+}
+input{
+  width: 40vmin;
+  font-size:4vmin;
+}
+.selectField select{
+    width: 60px; height:17px; font-size:11px; display: flex; flex-direction:column; justify-content: flex-end;
+    margin-right:0;margin-left:auto; outline: none; z-index: 2;
+}
+select:focus{
+outline: none;
+}
+#copyright{
+  position:fixed;
+  bottom:0;
+  font-size:3vmin;
+  color:#aaa;
+  z-index: 2;
+  display:none;
+}
+.actionContainer{
+    width:60vw; margin: 0; display:inline-flex; flex-direction: column; position:relative;
+}
+.gameMenu{
+    width:40vw; height:10vh; max-width:225px; margin-right: 0; margin-top:0; margin-left:auto;
+    display:flex; flex-direction: row; justify-content:flex-end; align-items:center; z-index: 2;
+}
+.goHome{
+  height:3vh; margin-right:1vw; text-decoration: underline; cursor:pointer; font-size: 3.5vh;
+  display: inline-flex; float: left;
+}
+#goToMenuMental{
+  color:white; font-size: 5vmin;
+}
+.spica {
+    background: #696969; width:100%; height: 0.5vh; width:100%; margin-top:4.4vh; margin-bottom: 4.4vh;
+    position:relative;
+}
+.kost {
+    width: 5%; height: 9vh; border-radius: 50vmin/50vmin; top: -3.9vh; background: #d69f60;
+    position:absolute; cursor: pointer; display: inline-flex; right:0;
+    box-shadow: inset 2vmin  0 13px -1.3vmin, inset -2vmin 0 13px -1.3vmin;
+}
+#schety {
+    width: 96%; max-width: 700px; height: 84vh;
+    background:#f0f2fa; display: flex; flex-direction: column; margin-left:auto; margin-right:auto; position: relative;
+}
+#border{
+    width: 100vw; max-width: 750px; height: 90vh; position: relative;
+    background: #7f582b; display:none; align-items: center; margin-left:auto; margin-right:auto;
+}
+#actionSchety{
+    display:flex; font-weight: bold;
+    height: 7vh; font-size: 5vmin; width:48vw; max-width:350px;
+    align-items:flex-end; vertical-align: bottom; color:red;
+}
+ #pointsField{
+     margin-left:auto; margin-right:3vw; height:3vh; font-size: 4.5vmin; color:#cf60f7;
+     display:inline-flex; font-weight: bold; align-items:flex-start; float:right;
+}
+#navSchety{
+    height:10vh; width:100vw; max-width:750px;
+    flex-direction:row; align-items:flex-end; position:relative; margin-left:auto; margin-right:auto; margin-bottom: 0; margin-top: 0; display:none;
+}
+#startStopSchety{
+    width: 18vw; max-width: 150px; height:7vh; line-height:7vh; background: #7f582b; font-size:4vmin; color:white;
+    font-weight: bold; display:inline-block;
+    box-shadow: 0 0.7vh #999; border-radius: 15px;
+    cursor: pointer; text-align:center; align-items:center; margin-left:auto; margin-right:0;
+}
+#startStopSchety:active {
+    box-shadow: 0 0.5vh #666; transform: translateY(0.4vh);
+}
+.spica1 {
+    background: #696969; height: 1vh; margin-top:4.8vh; margin-bottom: 4.8vh; margin-left:0px; position:relative;
+}
+.spica2{
+    background: #696969; height: 1vh; margin-top:4.8vh; margin-bottom: 4.8vh;margin-left:0px; position:relative;
+}
+.kost1 {
+  width: 13%; height: 4vh; border-radius: 2rem/4rem; top: -1.5vh;background: #8c6a42; border:0;
+  position: absolute; display: inline-flex; justify-content: center; cursor: pointer; margin:0px; padding:0px;
+  box-shadow: 3.5vmin 0 10px -1.6vmin inset, -3.5vmin 0 10px -1.6vmin inset;
+}
+.kost1:before,
+.kost1:after {
+content: ""; width: 0; height: 0; position: absolute;
+border-left: 3.7vw solid transparent; border-right: 3.7vw solid transparent;
+}
+.kost1:before {
+top: -3.3vh; border-bottom: 3.6vh solid #0d0d01;
+}
+.kost1:after {
+bottom: -3.3vh; border-top: 3.6vh solid #0d0d01;
+}
+.kost2{
+  width: 34%; height: 4vh; border-radius: 2rem/4rem; top: -1.5vh; background: #8c6a42; margin:0px; border:0;
+  position: absolute; display: inline-flex; justify-content: center; cursor: pointer;
+  box-shadow: 3.5vmin 0 10px -1.6vmin inset, -3.5vmin 0 10px -1.6vmin inset; right:0;
+}
+.kost2:before,
+.kost2:after {
+content: ""; width: 0; height: 0;
+position: absolute; border-left: 3.7vw solid transparent; border-right: 3.7vw solid transparent;
+}
+.kost2:before {
+top: -3.3vh; border-bottom: 3.6vh solid #0d0d01;
+}
+.kost2:after {
+bottom: -3.3vh; border-top: 3.6vh solid #0d0d01;
+}
+#leftField {
+    width:67.5vw; background: #f0f2fa; height: 85vh;
+    display:inline-flex; flex-direction:column; margin-top: 0;
+}
+#leftFieldQuest {
+    width:67.5vw; background:#0d0726; height: 23vh;
+    display:inline-flex; flex-direction:column; margin-top: 0;
+}
+#rightField{
+    background: #f0f2fa; width:25vw; height:85vh; display:inline-flex; flex-direction:column; margin-left: 2.5vw;
+}
+#rightFieldQuest{
+    background:#0d0726; width:25vw; height:23vh; display:inline-flex; flex-direction:column; margin-left: 2.5vw;
+}
+#navAbacus{
+    height:10vh; width:100vw;
+    display:none; position:relative; margin-left:auto; margin-right:auto;
+}
+#containerAbacus{
+    width:100vw; background:#30210f; height:90vh;
+    display:none; flex-direction: row; justify-content: center; align-items:center; margin-left:auto; margin-right:auto; position: relative;
+}
+#abacusQuest{
+    width:100vw; background:#476669; height:27vh;
+    display:flex; flex-direction: row; justify-content: center; align-items:center; margin-left:auto; margin-right:auto; position: relative;
+}
+#abacusQuest .kost1 {background: #f5f507; width: 13%; height: 4vh; border-radius: 2rem/4rem; top: -1.5vh; border:0;
+position: absolute; display: inline-flex; justify-content: center; cursor: pointer; margin:0px; padding:0px;
+box-shadow: 3.5vmin 0 10px -1.6vmin #0f1200 inset, -3.5vmin 0 10px -1.6vmin #0f1200 inset;
+}
+#abacusQuest .kost2 {background: #f5f507; box-shadow: 3.5vmin 0 10px -1.6vmin #0f1200 inset, -3.5vmin 0 10px -1.6vmin #0f1200 inset;}
+#actionAbacus{
+   width:55vw; height: 7vh;font-size: 5vmin; margin:0;
+   display: inline-flex; font-weight: bold; align-items: flex-end; color: red;
+}
+#abacusQuest .kost1:before {
+top: -3.3vh; border-bottom: 3.6vh solid #363601;
+}
+#abacusQuest .kost1:after {
+bottom: -3.3vh; border-top: 3.6vh solid #363601; z-index: 0;
+}
+#abacusQuest .kost2:before {
+top: -3.3vh; border-bottom: 3.6vh solid #363601;
+}
+#abacusQuest .kost2:after {
+bottom: -3.3vh; border-top: 3.6vh solid #363601;
+}
+#ochkiAbacus{
+   margin-left:auto; margin-right:6vw; height:3vh;font-size: 4.5vmin;
+   display:inline-flex; align-items:flex-start; color:#cf60f7; font-weight: bold; float:right;
+}
+#startStopAbacus{
+    width: 18vw; height:7vh; margin-left:auto; margin-right:0; font-size:3.5vmin; line-height:7vh;
+    box-shadow: 0 1vh #999; border-radius: 15px;
+    background: black; display:inline-block;
+    cursor: pointer; text-align:center; color:white;
+}
+#startStopAbacus:active {
+box-shadow: 0 0.5vh #666; transform: translateY(0.5vh);
+}
+#turnAbacus{
+  background: #4e5661;
+  color:white;
+  font-size:5vmin;
+  height:4vh;
+  line-height: 4vh;
+  text-align: center;
+  display:inline-flex;
+  border-radius: 1vmin;
+  cursor: pointer;
+  box-shadow: 0 0.7vh #999;
+}
+#turnAbacus:active {
+box-shadow: 0 0.4vh #666; transform: translateY(0.3vh);
+}
+#abacusContainerHorisontal{
+  height:90vh;
+  width:100vw;
+  background: black;
+  display:none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+#upperField{ height:20%; width:90%; background:#f0f2fa; display:flex; padding-left:1vw;}
+#downerField{height:60%; width:90%; background:#f0f2fa; margin-top:3vw;display:flex; padding-left:1vw;}
+.spica1Horisontal{background: #696969; height: 100%; width:1vw; margin-left:5.7%; margin-right: 5.7%; position:relative; background: #696969;}
+.spica2Horisontal{background: #696969; height: 100%; width:1vw; margin-left:5.7%; margin-right: 5.7%; position:relative; background: #696969;}
+.kost1Horisontal{width: 6vw; height: 40%; border-radius: 4vw/3.5vh; background: #8c6a42; border:0;
+position: absolute; display: inline-flex; cursor: pointer; margin:0px; padding:0px; left:-250%;
+box-shadow: 0 3.5vmin 10px -1.6vmin inset, 0 -3.5vmin 10px -1.6vmin inset;}
+.kost1Horisontal:before{
+left: -2.4vw; border-right: 2.6vw solid #0d0d01;
+}
+.kost1Horisontal:after{
+right: -2.4vw; border-left: 2.6vw solid #0d0d01;
+}
+.kost1Horisontal:before,
+.kost1Horisontal:after {
+content: ""; width: 0; height: 0; top:25%;
+position: absolute; border-top: 1.8vh solid transparent; border-bottom: 1.8vh solid transparent;
+}
+.kost2Horisontal{width: 6vw; height: 13%; border-radius: 4vw/3.5vh; background: #8c6a42; border:0;
+position: absolute; display: inline-flex; cursor: pointer; margin:0px; padding:0px;left:-250%;
+box-shadow: 0 3.5vmin 10px -1.6vmin inset, 0 -3.5vmin 10px -1.6vmin inset;}
+.kost2Horisontal:before{
+left: -2.4vw; border-right: 2.6vw solid #0d0d01;
+}
+.kost2Horisontal:after{
+right: -2.4vw; border-left: 2.6vw solid #0d0d01;
+}
+.kost2Horisontal:before,
+.kost2Horisontal:after {
+content: ""; width: 0; height: 0; top:25%;
+position: absolute; border-top: 1.8vh solid transparent; border-bottom: 1.8vh solid transparent;
+}
+#mentalGame{
+  width:100%; height:95vh; display:none; background: #0d0726; overflow:hidden; position:absolute; bottom:0; z-index:0;
+}
+#pointsFieldMental{
+     margin-left:auto; margin-right:10vw; height:3vh; font-size: 12px;color: #cf60f7;
+     display:flex; font-weight: bold; float:right;
+}
+#navMental{
+    height:5vh; width:100vw; background: #0d0726;
+    display:none; flex-direction:row; position:relative; margin-left:auto; margin-right:auto; z-index: 1;
+}
+#startStopMental{
+    width: 18vw; max-width: 150px; height:7vh; background: #49849e; font-size:4vmin; line-height:7vh; border-radius: 15px;
+    font-weight: bold; display:inline-block;
+    box-shadow: 0 0.5vh #31414d;
+    cursor: pointer; text-align:center; color:white; align-items:center; margin-left:auto; margin-right:0;
+    z-index: 2;
+}
+#startStopMental:active {
+    box-shadow: 0 0.2vh #31414d; transform: translateY(0.4vh);
+}
+.buttons{
+position:relative; display:flex; justify-content: center; margin-left:auto; margin-right:auto;
+}
+.button{
+  border-radius: 10px; width:38px; height:35px; line-height: 40px; font-size:25px; margin:0.5vmin; opacity: 0.8; background:#2c6d9c; color:white;
+  display:flex; position:relative; justify-content:center; cursor: pointer;
+}
+#answered{
+  background:#769fcf; height:10vh; color:white; font-size: 25px; width:168px; margin:auto; margin-bottom:1vh; opacity: 0.7;
+  display:flex; justify-content: center; align-items: center;
+}
+ #taskMental {
+   white-space:pre; position: absolute; display:flex; mix-blend-mode: screen;
+   color: white; font-size: 10vmin; line-height: 6vw; opacity: 1; font-family: 'Anton', sans-serif;
+   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #ff00de, 0 0 80px #ff00de, 0 0 90px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+   animation: moveTask 0.8s 1 ease-out;z-index: 3;
+}
+#animationWindow{
+  height:30vh;
+  position:relative; display:flex; justify-content:center; align-items: center;z-index: 3;
+}
+#ui .text {
+  will-change: transform; white-space:pre; position: absolute; display: none;
+  font-size: 10vmin; color: white; line-height: 6vw; opacity: 0; font-family: 'Anton', sans-serif;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;z-index: 3;
+}
+#ui .text:nth-child(1) {
+  clip-path: polygon(0% 0%, 0% 50%, 10% 50%);
+  animation: fly1 1300ms cubic-bezier(0.2, 0.2, 0.6, 1) 1 reverse;
+}
+#animationField{
+position:absolute; display:none; font-weight: bold;
+font-size:50px; color:red; top:50vh; left:50vw; opacity:1; z-index: 4;
+transition: all 1s ease-in;
+-webkit-transition: all 1s ease-in; /** Chrome & Safari **/ -moz-transition: all 1s ease-in; /** Firefox **/-o-transition: all 1s ease-in; /** Opera **/
+}
+#animationRecord{
+position:absolute; display:none;
+color:#913630; opacity:1; font-size:30px; top:50vh; left:50vw; opacity:1;z-index: 3;
+transition: all 3s ease-in;
+-webkit-transition: all 1.5s ease-in; /** Chrome & Safari **/-moz-transition: all 1.5s ease-in; /** Firefox **/-o-transition: all 1.5s ease-in; /** Opera **/
+}
+#container{
+display:none; flex-direction: column; justify-content: center;position: relative;
+width:100%; margin-left: auto; margin-right: auto;
+}
+.recordBlock{
+  height:auto; display: inline; font-weight: bold; color: red;
+}
+h1{
+  font-size:7vmin; opacity:1; color:#7B68EE; margin:auto; padding:0;
+  text-shadow: 0.1vmin 0.1vmin 0.2vmin black, 0 0 0.5vmin #ff7dda;
+}
+#contentInst{width:96%; position:relative; margin:2vmin auto; max-width: 640px;}
+.loginButton {
+width: 40vmin; height:3.5vw; background: #B22222; font-size:3vmin; line-height:3.5vw; box-shadow: 0 0.3vw #8B0000; border-radius: 15px; color:white;
+display:block; cursor: pointer; text-align:center;  position: relative;  margin-top:1vmin; z-index:0;
+}
+.loginButton:active {
+box-shadow: 0 0.1vw #8B0000; transform: translateY(0.2vw);
+}
+.loginFields{
+display: inline-block;
+}
+.content{
+  position:relative; width:96%; color:black; font-size:4.7vmin; opacity:0.9; border-radius:2vmin;
+background: linear-gradient(70deg, #00FFFF, #00FF00);
+display:flex; flex-direction: row; align-items: flex-start;
+margin-top:2vh; margin-left: auto; margin-right: auto;
+padding-left: 1vw; padding-right: 1vw; padding-top:1vh; padding-bottom:1vh;
+}
+#questContent{display:none;}
+#userName{
+display:inline-flex;
+}
+#logOut{
+border-radius: 10px; background: #B22222; padding-top:5px; padding-bottom:5px; padding-left:10px; padding-right:10px; color:white;
+cursor:pointer; display: inline;
+margin-left:0; margin-right: 5px;
+}
+.goToGame{
+white-space:pre; display: inline-block; width:15vw; text-align: center;
+background: #8B0000; border-radius: 2vmin; color: white;
+padding:1vmin; padding-top:0.5vmin; padding-bottom:0.5vmin; cursor:pointer; float:right; position:relative;
+}
+@-webkit-keyframes blink {
+	0% { color: #00d9e8; }
+	50% { color: #db84be; }
+	100% { color: #00d9e8; }
+}
+ #contentReg, #contentGame, #contentGameRecords, #questContainer{
+display:none;
+}
+@media screen and (min-width: 700px)  {
+.content{
+      max-width:640px; font-size:18px;
+      padding-left:20px; padding-right:20px; padding-top:16px; padding-bottom:16px;
+  }
+
+  .kost1:before,
+  .kost1:after {
+  border-left: 14px solid transparent; border-right: 14px solid transparent;}
+  .kost2:before,
+  .kost2:after {
+  border-left: 14px solid transparent; border-right: 14px solid transparent;}
+  #leftField {
+      max-width: 260px;
+  }
+#rightField {
+      max-width: 98px; margin-left: 36px;
+  }
+  #leftFieldQuest {
+      max-width: 260px;
+  }
+#rightFieldQuest {
+      max-width: 98px; margin-left: 36px;
+  }
+  #containerAbacus{
+      max-width: 480px;
+  }
+  #abacusQuest{
+      max-width: 480px;
+  }
+  #actionContainerAbacus{
+    max-width:330px;
+  }
+  #actionAbacus{
+      max-width:300px; font-size: 26px;
+  }
+  #menuAbacus{
+      max-width:150px;
+  }
+  #navAbacus{
+      max-width:480px;
+  }
+  #startStopAbacus{
+      max-width: 76px; font-size:20px;
+  }
+  #abacusContainerHorisontal{
+    max-height:400px;
+    max-width: 1024px;
+  }
+  .kost1Horisontal{max-width: 53px; border-radius: 30px/18px;}
+  .kost1Horisontal:before,
+  .kost1Horisontal:after { border-top: 7.5px solid transparent; border-bottom: 7.5px solid transparent;
+  }
+  .kost2Horisontal{max-width: 53px; border-radius: 30px/18px;}
+  .kost2Horisontal:before,
+  .kost2Horisontal:after { border-top: 7.5px solid transparent; border-bottom: 7.5px solid transparent;
+  }
+  .spica1Horisontal{max-width:9px;}
+  .spica2Horisontal{max-width:9px;}
+}

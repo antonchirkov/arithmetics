@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ментальная Арифметика онлайн</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Развивающие игры в виде интерактивного курса для детей и не только, совершенствующие математические способности и знания"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleMental.css">
+  <link rel="stylesheet" href="robotStyle.css">
+  <link rel="stylesheet" href="questStyle.css">
+  </head>
+  <body>
+    <div id="copyright">&copy; Mattelab &trade;</div>
+    <div id="container">
+    <h1>Ментальная Арифметика</h1>
+
+<div class="content" id="contentLogInn">
+<div style="margin:0 auto;">
+<input placeholder="Твое Имя" id="logInnName"/>
+<div class="loginButton" onclick='login()'>Войти в игру</div>
+</div>
+</div>
+
+<div id="contentInst">
+ <br/><strong>Ментальная Арифметика</strong> - это полноценный <strong>развивающий математические способности и знания курс</strong>
+  в виде <strong>интерактивных развивающих игр</strong>, в которых игрок погружается в мир математики и арифметики. <br/> <br/>
+  <div style="background: green; width:12vmin; height:12vmin; border-radius:50%; display:block; font-size:6vmin; color:white; text-align:center; line-height:12vmin; margin:0 auto;">6+!</div>
+<br/>
+  Игра полезна и интересна как для знакомящихся с предметом детям, так и знатокам любого уровня в качестве повышения своих математических способностей и навыков.
+  Новичку следует пройти квест, где ему будет помогать искуственный интеллект Роб, который ознакомит его с азами и тонкостями Ментальной Арифметики,
+  научит работать со <strong>счетами</strong> и <strong>абакусом</strong> и передаст и поможет развить фундаментальные навыки.<br/><br/>
+  <div class='robot'>
+    <div class='antens'>1 + 7</div>
+    <div class='eyes'> ∞ <div class="eyesInside"><div class='eye1'>✹</div><div class='eye2'>✹</div></div></div>
+    <div class='nose'>∠&ensp;</div>
+    <div class='mouth'>−</div>
+  </div><br/>
+  После прохождения квеста уже опытный и владеющий всеми инструментами Ментальной Арифметики и ее правилами игрок сам может выбирать игры
+  (Счеты, Абакус или Метальный счет), а также регулировать уровень их сложности.<br/><br/>
+ <div style="width:12vmin; height:12vmin; border-radius:50%; display:block; font-size:9vmin; color:white; text-align:center; line-height:12vmin; margin:0 auto;">
+   &#129504;</div>
+  <br/>Не смотря на то, что Ментальная Арифметика имеет форму <strong>развивающих игр</strong>, она является полноценным курсом,
+  который можно распределить на <strong>уроки</strong>, где игрок может отслеживать свои успехи, достижения и рекорды.<br/><br/>
+  <div style=" width:12vmin; height:12vmin; border-radius:50%; display:block; font-size:9vmin; color:white; text-align:center; line-height:12vmin; margin:0 auto;">
+    &#128241;</div>
+  <br/>Игры и Квест не имеют особых технических требований и адаптирована также под <strong>мобильные устройства</strong>, такие как <strong>планшеты</strong> и <strong>смартфоны</strong>.
+  Минимальное расширение экрана, на которое расчитана игра, это ширина в 220px, однако гораздо удобнее играть на устройствах с более широким экраном.
+</div>
+<div class="content" id="contentGame">
+  <div onclick="logOut();" id='logOut'>Выйти</div>
+<div class='robotMessage'><div id='messagePublic'></div><div id='messageContent'></div>
+<div class='triangle'></div>
+</div>
+<div id='robot' class='robot'>
+  <div id='antens' class='antens'>1 + 7</div>
+  <div id='eyes' class='eyes'> ∞ <div id="eyesInside" class="eyesInside"><div id='eye1' class='eye1'>✹</div><div id='eye2' class="eye2">✹</div></div></div>
+  <div id='nose' class='nose'>∠&ensp;</div>
+  <div id='mouth' class='mouth'>−</div>
+</div>
+</div>
+<div class='content' id='questContent'>
+<div id="questMessage" style="margin-right:5vw;"></div>
+<div class='goToGame' style="margin-left:auto;" onclick='quest()'>Квест</div><br/>
+</div>
+<div class='content' id='contentGameRecords'>
+  <hr color='#348aed'>
+<div>Рекорды на Счетах:</div>
+| просто: <div class='recordBlock' id='schetyEasy'>0</div>
+| средне: <div class='recordBlock' id='schetyMiddle'>0</div>
+| сложно: <div class='recordBlock' id='schetyDifficult'>0</div>
+| <div class='goToGame' onclick='schetyGame();'>Счеты</div><br/>
+<hr color='#FF6347'>
+<div>Рекорды на Абакусе:</div>
+| просто: <div class='recordBlock' id='abacusEasy'>0</div>
+| средне: <div class='recordBlock' id='abacusMiddle'>0</div>
+| сложно: <div class='recordBlock' id='abacusDifficult'>0</div>
+| <div class='goToGame'  onclick='abacus();'>Абакус</div><br/>
+<hr color='#1efa25'>
+<div>Рекорды на Ментале:</div>
+| просто: <div class='recordBlock' id='mentalEasy'>0</div>
+| средне: <div class='recordBlock' id='mentalMiddle'>0</div>
+| сложно: <div class='recordBlock' id='mentalDifficult'>0</div> | <div class='goToGame' onclick='mental();'>Ментал</div><br/>
+<hr color='#34cbed'>
+</div>
+</div>
+<div id='questContainer'>
+<div id='questLevel'>
+  <div id='goHomeQuest' onclick="goToMenuQuest();">в меню</div>
+  <div id='stepBack' onclick='questStepBack()'>«шаг назад</div>
+  <div id='levelCenter'></div>
+  <div id='continueQuest' onclick="questNextStep(name)">дальше»</div>
+</div>
+<div id='robContainer'>
+  <div style='position:relative;'>
+  <div class='robotMessage' style="right:65px; bottom:1vmin; position:absolute; z-index:1;">
+    <div style='position:relative;'>
+    <div id='messagePublicQuest'></div><div id='messageContentQuest'></div>
+    </div>
+    <div class='triangle'></div>
+  </div>
+  <div id='robotQuest'>
+    <div id='antensQuest'>1 + 7</div>
+    <div id='eyesQuest'> ∞ <div id="eyesInsideQuest"><div id='eye1Quest'>✹</div><div id='eye2Quest'>✹</div></div></div>
+    <div id='noseQuest'>∠&ensp;</div>
+    <div id='mouthQuest'>−</div>
+  </div>
+</div>
+</div>
+<div class="fingers" style="right:28vmin;">
+  <div style="display:inline; position:relative; height:15vmin;">
+<div class="fingers1" id="finger1"></div>
+<div class="fingers1" id="finger2"></div>
+<div class="fingers1" id="finger3"></div>
+<div class="fingers1" id="finger4"></div>
+</div>
+<div style="display:inline; position:relative; height:15vmin;">
+  <div class="fal" ></div>
+  <div class="fal" style="left:3.8vmin"></div>
+  <div class="fal" style="left:7.6vmin"></div>
+  <div class="fal" style="left:11.4vmin"></div>
+  </div>
+<div class="arm" style="border-radius:0 0 5vmin 7vmin;"><div id="finger5"><div id='mask2'></div></div></div>
+<center>Единицы</center>
+</div>
+
+<div class="fingers" style="right:8vmin;">
+  <div style="display:inline; position:relative; height:15vmin; ">
+<div class="fingers1" id="finger40"></div>
+<div class="fingers1" id="finger30"></div>
+<div class="fingers1" id="finger20"></div>
+<div class="fingers1" id="finger10"></div>
+</div>
+<div style="display:inline; justify-content:flex-start; position:relative;">
+  <div class="fal" ></div>
+  <div class="fal" style="left:3.8vmin"></div>
+  <div class="fal" style="left:7.6vmin"></div>
+  <div class="fal" style="left:11.4vmin"></div>
+  </div>
+<div class="arm">
+  <div id="finger50"><div id='mask1'></div></div>
+</div>
+<center>Десятки</center>
+</div>
+<div id="mentalButtonsQuestFingers">
+<div id='answeredQuestFingers'></div>
+<div class="buttonsQuest"  style='margin-left:0'>
+<div class="buttonQuestFingers" onclick="if (answeredQuestFingers.innerHTML.length < 9) answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML+'1';">1</div>
+<div class="buttonQuestFingers" onclick="if (answeredQuestFingers.innerHTML.length < 9) answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML+'2';">2</div>
+<div class="buttonQuestFingers" onclick="if (answeredQuestFingers.innerHTML.length < 9) answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML+'3';">3</div>
+<div class="buttonQuestFingers" onclick="if (answeredQuestFingers.innerHTML.length < 9) answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML+'4';">4</div>
+</div>
+<div class="buttonsQuest" style='margin-left:0'>
+<div class="buttonQuestFingers" onclick="if (answeredQuestFingers.innerHTML.length < 9) answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML+'5';">5</div>
+<div class="buttonQuestFingers" onclick="if (answeredQuestFingers.innerHTML.length < 9) answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML+'6';">6</div>
+<div class="buttonQuestFingers" onclick="if (answeredQuestFingers.innerHTML.length < 9) answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML+'7';">7</div>
+<div class="buttonQuestFingers" onclick="if (answeredQuestFingers.innerHTML.length < 9) answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML+'8';">8</div>
+</div>
+<div class="buttonsQuest" style='margin-left:0'>
+<div class="buttonQuestFingers" onclick="if (answeredQuestFingers.innerHTML.length < 9) answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML+'9';">9</div>
+<div class="buttonQuestFingers" onclick="if (answeredQuestFingers.innerHTML.length < 9) answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML+'0';">0</div>
+<div class="buttonQuestFingers" onclick="answeredQuestFingers.innerHTML=''">&#9747;</div>
+<div class="buttonQuestFingers" onclick="answeredQuestFingers.innerHTML=answeredQuestFingers.innerHTML.slice(0, answeredQuestFingers.innerHTML.length-1)">&larr;</div>
+</div>
+</div>
+
+<div id="mentalButtonsQuest">
+<div id='answeredQuest'></div>
+<div class="buttonsQuest">
+<div class="buttonQuest" onclick="if (answeredQuest.innerHTML.length < 9) answeredQuest.innerHTML=answeredQuest.innerHTML+'1';">1</div>
+<div class="buttonQuest" onclick="if (answeredQuest.innerHTML.length < 9) answeredQuest.innerHTML=answeredQuest.innerHTML+'2';">2</div>
+<div class="buttonQuest" onclick="if (answeredQuest.innerHTML.length < 9) answeredQuest.innerHTML=answeredQuest.innerHTML+'3';">3</div>
+<div class="buttonQuest" onclick="if (answeredQuest.innerHTML.length < 9) answeredQuest.innerHTML=answeredQuest.innerHTML+'4';">4</div>
+</div>
+<div class="buttonsQuest">
+<div class="buttonQuest" onclick="if (answeredQuest.innerHTML.length < 9) answeredQuest.innerHTML=answeredQuest.innerHTML+'5';">5</div>
+<div class="buttonQuest" onclick="if (answeredQuest.innerHTML.length < 9) answeredQuest.innerHTML=answeredQuest.innerHTML+'6';">6</div>
+<div class="buttonQuest" onclick="if (answeredQuest.innerHTML.length < 9) answeredQuest.innerHTML=answeredQuest.innerHTML+'7';">7</div>
+<div class="buttonQuest" onclick="if (answeredQuest.innerHTML.length < 9) answeredQuest.innerHTML=answeredQuest.innerHTML+'8';">8</div>
+</div>
+<div class="buttonsQuest">
+<div class="buttonQuest" onclick="if (answeredQuest.innerHTML.length < 9) answeredQuest.innerHTML=answeredQuest.innerHTML+'9';">9</div>
+<div class="buttonQuest" onclick="if (answeredQuest.innerHTML.length < 9) answeredQuest.innerHTML=answeredQuest.innerHTML+'0';">0</div>
+<div class="buttonQuest" onclick="answeredQuest.innerHTML=''">&#9747;</div>
+<div class="buttonQuest" onclick="answeredQuest.innerHTML=answeredQuest.innerHTML.slice(0, answeredQuest.innerHTML.length-1)">&larr;</div>
+</div>
+</div>
+<div id="borderQuest">
+    <div id="schetyQuest">
+    <div class="spica">
+    <div class="kost" style="right:45%"></div>
+    <div class="kost" style="right:40%"></div>
+    <div class="kost" style="right:35%"></div>
+    <div class="kost" style="right:30%"></div>
+    <div class="kost" style=" background-color:#18b5b5; right:25%"></div>
+    <div class="kost" style="background-color:#18b5b5; right:20%"></div>
+    <div class="kost" style="right:15%"></div>
+    <div class="kost" style="right:10%"></div>
+    <div class="kost" style="right:5%"></div>
+    <div class="kost" ></div>
+    </div>
+    <div class="spica">
+    <div class="kost" style="right:45%"></div>
+    <div class="kost" style="right:40%"></div>
+    <div class="kost" style="right:35%"></div>
+    <div class="kost" style="right:30%"></div>
+    <div class="kost" style=" background-color:#18b5b5; right:25%"></div>
+    <div class="kost" style="background-color:#18b5b5; right:20%"></div>
+    <div class="kost" style="right:15%"></div>
+    <div class="kost" style="right:10%"></div>
+    <div class="kost" style="right:5%"></div>
+    <div class="kost" ></div>
+    </div>
+    <div class="spica">
+    <div class="kost" style="right:45%"></div>
+    <div class="kost" style="right:40%"></div>
+    <div class="kost" style="right:35%"></div>
+    <div class="kost" style="right:30%"></div>
+    <div class="kost" style=" background-color:#18b5b5; right:25%"></div>
+    <div class="kost" style="background-color:#18b5b5; right:20%"></div>
+    <div class="kost" style="right:15%"></div>
+    <div class="kost" style="right:10%"></div>
+    <div class="kost" style="right:5%"></div>
+    <div class="kost" ></div>
+    </div>
+</div>
+</div>
+<div id='abacusQuest'>
+  <div id="leftFieldQuest">
+    <div class="spica1">
+      <div class="kost1" ></div>
+    <div class="kost1" style='left:13%'></div>
+    <div class="kost1" style='left:26%'></div>
+    <div class="kost1" style='left:39%'></div>
+    </div>
+    <div class="spica1">
+      <div class="kost1" ></div>
+      <div class="kost1" style='left:13%'></div>
+      <div class="kost1" style='left:26%'></div>
+      <div class="kost1" style='left:39%'></div>
+    </div>
+  </div>
+  <div id="rightFieldQuest">
+  <div class="spica2">
+  <div class="kost2" ></div>
+  </div>
+  <div class="spica2">
+  <div class="kost2" ></div>
+  </div>
+</div>
+</div>
+</div>
+<div id="navSchety">
+    <div class="actionContainer">
+      <div>
+      <div class='goHome' id='goToMenuSchety'>в меню</div>
+         <div id="pointsField"></div>
+       </div>
+        <div id="actionSchety"> </div>
+    </div>
+    <div class="gameMenu">
+        <div class="selectField">
+            <select id="levelSchety">
+            <option value="Easy" selected="selected"> Просто</option>
+            <option value="Middle"> Средне </option>
+            <option value="Difficult"> Сложно </option>
+            </select>
+        </div>
+        <div id="startStopSchety"> ► </div>
+    </div>
+</div>
+<div id="border">
+    <div id="schety">
+      <div class="spica">
+      <div class="kost" style="right:45%"></div>
+      <div class="kost" style="right:40%"></div>
+      <div class="kost" style="right:35%"></div>
+      <div class="kost" style="right:30%"></div>
+      <div class="kost" style=" background-color:#757575; right:25%"></div>
+      <div class="kost" style="background-color:#757575; right:20%"></div>
+      <div class="kost" style="right:15%"></div>
+      <div class="kost" style="right:10%"></div>
+      <div class="kost" style="right:5%"></div>
+      <div class="kost" ></div>
+      </div>
+      <div class="spica">
+      <div class="kost" style="right:45%"></div>
+      <div class="kost" style="right:40%"></div>
+      <div class="kost" style="right:35%"></div>
+      <div class="kost" style="right:30%"></div>
+      <div class="kost" style=" background-color:#757575; right:25%"></div>
+      <div class="kost" style="background-color:#757575; right:20%"></div>
+      <div class="kost" style="right:15%"></div>
+      <div class="kost" style="right:10%"></div>
+      <div class="kost" style="right:5%"></div>
+      <div class="kost" ></div>
+      </div>
+      <div class="spica">
+      <div class="kost" style="right:45%"></div>
+      <div class="kost" style="right:40%"></div>
+      <div class="kost" style="right:35%"></div>
+      <div class="kost" style="right:30%"></div>
+      <div class="kost" style=" background-color:#757575; right:25%"></div>
+      <div class="kost" style="background-color:#757575; right:20%"></div>
+      <div class="kost" style="right:15%"></div>
+      <div class="kost" style="right:10%"></div>
+      <div class="kost" style="right:5%"></div>
+      <div class="kost" ></div>
+      </div>
+      <div class="spica">
+      <div class="kost" style="right:45%"></div>
+      <div class="kost" style="right:40%"></div>
+      <div class="kost" style="right:35%"></div>
+      <div class="kost" style="right:30%"></div>
+      <div class="kost" style=" background-color:#757575; right:25%"></div>
+      <div class="kost" style="background-color:#757575; right:20%"></div>
+      <div class="kost" style="right:15%"></div>
+      <div class="kost" style="right:10%"></div>
+      <div class="kost" style="right:5%"></div>
+      <div class="kost" ></div>
+      </div>
+      <div class="spica">
+      <div class="kost" style="right:45%"></div>
+      <div class="kost" style="right:40%"></div>
+      <div class="kost" style="right:35%"></div>
+      <div class="kost" style="right:30%"></div>
+      <div class="kost" style=" background-color:#757575; right:25%"></div>
+      <div class="kost" style="background-color:#757575; right:20%"></div>
+      <div class="kost" style="right:15%"></div>
+      <div class="kost" style="right:10%"></div>
+      <div class="kost" style="right:5%"></div>
+      <div class="kost" ></div>
+      </div>
+      <div class="spica">
+      <div class="kost" style="right:45%"></div>
+      <div class="kost" style="right:40%"></div>
+      <div class="kost" style="right:35%"></div>
+      <div class="kost" style="right:30%"></div>
+      <div class="kost" style=" background-color:#757575; right:25%"></div>
+      <div class="kost" style="background-color:#757575; right:20%"></div>
+      <div class="kost" style="right:15%"></div>
+      <div class="kost" style="right:10%"></div>
+      <div class="kost" style="right:5%"></div>
+      <div class="kost" ></div>
+      </div>
+    <div class="spica">
+    <div class="kost" style="right:15%"></div>
+    <div class="kost" style="background-color:#757575; right:10%;"></div>
+    <div class="kost" style="background-color:#757575; right:5%;"></div>
+    <div class="kost" ></div>
+    </div>
+    <div class="spica">
+    <div class="kost" style="right:45%"></div>
+    <div class="kost" style="right:40%"></div>
+    <div class="kost" style="right:35%"></div>
+    <div class="kost" style="right:30%"></div>
+    <div class="kost" style=" background-color:#757575; right:25%"></div>
+    <div class="kost" style="background-color:#757575; right:20%"></div>
+    <div class="kost" style="right:15%"></div>
+    <div class="kost" style="right:10%"></div>
+    <div class="kost" style="right:5%"></div>
+    <div class="kost" ></div>
+    </div>
+    <div class="spica">
+    <div class="kost" style="right:45%"></div>
+    <div class="kost" style="right:40%"></div>
+    <div class="kost" style="right:35%"></div>
+    <div class="kost" style="right:30%"></div>
+    <div class="kost" style=" background-color:#757575; right:25%"></div>
+    <div class="kost" style="background-color:#757575; right:20%"></div>
+    <div class="kost" style="right:15%"></div>
+    <div class="kost" style="right:10%"></div>
+    <div class="kost" style="right:5%"></div>
+    <div class="kost" ></div>
+    </div>
+    </div>
+</div>
+<div id="navAbacus">
+<div class="actionContainer">
+<div>
+<div class='goHome' id='goToMenuAbacus'>в меню</div>
+   <div id="ochkiAbacus"></div>
+ </div>
+<div style='display:flex'><div id="actionAbacus"> </div><div id='turnAbacus'></div></div>
+</div>
+<div class="gameMenu" id="menuAbacus">
+   <div class="selectField">
+       <select id="levelAbacus">
+       <option value="Easy" selected="selected"> Просто</option>
+       <option value="Middle"> Средне </option>
+       <option value="Difficult"> Сложно </option>
+       </select>
+   </div>
+   <div id="startStopAbacus"> ► </div>
+</div>
+</div>
+<div id="containerAbacus">
+<div id="leftField">
+  <div class="spica1">
+  <div class="kost1" ></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  </div>
+  <div class="spica1">
+  <div class="kost1" ></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  </div>
+  <div class="spica1">
+  <div class="kost1" ></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  </div>
+  <div class="spica1">
+  <div class="kost1" ></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  </div>
+  <div class="spica1">
+  <div class="kost1" ></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  </div>
+  <div class="spica1">
+  <div class="kost1" ></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  </div>
+  <div class="spica1">
+  <div class="kost1" ></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  </div>
+  <div class="spica1">
+  <div class="kost1" ></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  <div class="kost1"></div>
+  </div>
+  </div>
+  <div id="rightField">
+  <div class="spica2">
+  <div class="kost2" ></div>
+  </div>
+  <div class="spica2">
+  <div class="kost2" ></div>
+  </div>
+  <div class="spica2">
+  <div class="kost2" ></div>
+  </div>
+  <div class="spica2">
+  <div class="kost2" ></div>
+  </div>
+  <div class="spica2">
+  <div class="kost2" ></div>
+  </div>
+  <div class="spica2">
+  <div class="kost2" ></div>
+  </div>
+  <div class="spica2">
+  <div class="kost2" ></div>
+  </div>
+  <div class="spica2">
+  <div class="kost2" ></div>
+</div>
+</div>
+</div>
+<div id="abacusContainerHorisontal">
+  <div id="upperField">
+    <div class="spica1Horisontal">
+      <div class="kost1Horisontal"></div>
+    </div>
+    <div class="spica1Horisontal">
+      <div class="kost1Horisontal"></div>
+    </div>
+    <div class="spica1Horisontal">
+      <div class="kost1Horisontal"></div>
+    </div>
+    <div class="spica1Horisontal">
+      <div class="kost1Horisontal"></div>
+    </div>
+    <div class="spica1Horisontal">
+      <div class="kost1Horisontal"></div>
+    </div>
+    <div class="spica1Horisontal">
+      <div class="kost1Horisontal"></div>
+    </div>
+    <div class="spica1Horisontal">
+      <div class="kost1Horisontal"></div>
+    </div>
+    <div class="spica1Horisontal">
+      <div class="kost1Horisontal"></div>
+    </div>
+  </div>
+  <div id="downerField">
+    <div class="spica2Horisontal">
+      <div class="kost2Horisontal" style="bottom:39%"></div>
+      <div class="kost2Horisontal" style="bottom:26%"></div>
+      <div class="kost2Horisontal" style="bottom:13%"></div>
+      <div class="kost2Horisontal" style="bottom:0"></div>
+    </div>
+
+    <div class="spica2Horisontal">
+      <div class="kost2Horisontal" style="bottom:39%"></div>
+      <div class="kost2Horisontal" style="bottom:26%"></div>
+      <div class="kost2Horisontal" style="bottom:13%"></div>
+      <div class="kost2Horisontal" style="bottom:0"></div>
+    </div>
+    <div class="spica2Horisontal">
+      <div class="kost2Horisontal" style="bottom:39%"></div>
+      <div class="kost2Horisontal" style="bottom:26%"></div>
+      <div class="kost2Horisontal" style="bottom:13%"></div>
+      <div class="kost2Horisontal" style="bottom:0"></div>
+    </div>
+    <div class="spica2Horisontal">
+      <div class="kost2Horisontal" style="bottom:39%"></div>
+      <div class="kost2Horisontal" style="bottom:26%"></div>
+      <div class="kost2Horisontal" style="bottom:13%"></div>
+      <div class="kost2Horisontal" style="bottom:0"></div>
+    </div>
+    <div class="spica2Horisontal">
+      <div class="kost2Horisontal" style="bottom:39%"></div>
+      <div class="kost2Horisontal" style="bottom:26%"></div>
+      <div class="kost2Horisontal" style="bottom:13%"></div>
+      <div class="kost2Horisontal" style="bottom:0"></div>
+    </div>
+    <div class="spica2Horisontal">
+      <div class="kost2Horisontal" style="bottom:39%"></div>
+      <div class="kost2Horisontal" style="bottom:26%"></div>
+      <div class="kost2Horisontal" style="bottom:13%"></div>
+      <div class="kost2Horisontal" style="bottom:0"></div>
+    </div>
+    <div class="spica2Horisontal">
+      <div class="kost2Horisontal" style="bottom:39%"></div>
+      <div class="kost2Horisontal" style="bottom:26%"></div>
+      <div class="kost2Horisontal" style="bottom:13%"></div>
+      <div class="kost2Horisontal" style="bottom:0"></div>
+    </div>
+    <div class="spica2Horisontal">
+      <div class="kost2Horisontal" style="bottom:39%"></div>
+      <div class="kost2Horisontal" style="bottom:26%"></div>
+      <div class="kost2Horisontal" style="bottom:13%"></div>
+      <div class="kost2Horisontal" style="bottom:0"></div>
+    </div>
+  </div>
+</div>
+<div id="navMental">
+    <div class="actionContainer">
+      <div class='goHome' id='goToMenuMental'>в меню</div>
+         <div id="pointsFieldMental"></div>
+    </div>
+    <div class="gameMenu">
+        <div class="selectField">
+            <select id="levelMental">
+            <option value="Easy" selected="selected"> Просто</option>
+            <option value="Middle"> Средне </option>
+            <option value="Difficult"> Сложно </option>
+            </select>
+        </div>
+        <div id="startStopMental"> ► </div>
+    </div>
+</div>
+<div id="mentalGame">
+<div id='animationWindow'>
+<div id='taskMental'></div>
+<div id="ui">
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+    <div class="text"></div>
+</div></div>
+<div id="mentalButtons">
+<div id='answered'></div>
+<div class="buttons">
+<div class="button" onclick="if (answered.innerHTML.length < 9) answered.innerHTML=answered.innerHTML+'1';">1</div>
+<div class="button" onclick="if (answered.innerHTML.length < 9) answered.innerHTML=answered.innerHTML+'2';">2</div>
+<div class="button" onclick="if (answered.innerHTML.length < 9) answered.innerHTML=answered.innerHTML+'3';">3</div>
+<div class="button" onclick="if (answered.innerHTML.length < 9) answered.innerHTML=answered.innerHTML+'4';">4</div>
+</div>
+<div class="buttons">
+<div class="button" onclick="if (answered.innerHTML.length < 9) answered.innerHTML=answered.innerHTML+'5';">5</div>
+<div class="button" onclick="if (answered.innerHTML.length < 9) answered.innerHTML=answered.innerHTML+'6';">6</div>
+<div class="button" onclick="if (answered.innerHTML.length < 9) answered.innerHTML=answered.innerHTML+'7';">7</div>
+<div class="button" onclick="if (answered.innerHTML.length < 9) answered.innerHTML=answered.innerHTML+'8';">8</div>
+</div>
+<div class="buttons">
+<div class="button" onclick="if (answered.innerHTML.length < 9) answered.innerHTML=answered.innerHTML+'9';">9</div>
+<div class="button" onclick="if (answered.innerHTML.length < 9) answered.innerHTML=answered.innerHTML+'0';">0</div>
+<div class="button" onclick="answered.innerHTML=''">&#9747;</div>
+<div class="button" onclick="answered.innerHTML=answered.innerHTML.slice(0, answered.innerHTML.length-1)">&larr;</div>
+</div>
+</div>
+</div>
+<div id="animationRecord"></div>
+<div id="animationField"></div>
+<script src="setup.js"></script>
+<script src="schetyGame.js"></script>
+<script src="quest.js"></script>
+<script src="rob.js"></script>
+<script src="abacus.js"></script>
+<script src="mental.js"></script>
+<script src="effects.js"></script>
+  </body>
+  </html>
