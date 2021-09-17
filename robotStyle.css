@@ -1,0 +1,96 @@
+.robot{
+  display:inline; position: relative; justify-content: center; flex-direction: column; width:70px; margin-right: 8px;  color:black; font-family:serif;
+}
+.eyes{
+  font-size:45px; width:37px; height:33px; line-height: 42px; background:gray; display: flex; justify-content: center; margin:auto;
+  border-top:1px solid black; border-right:1px solid black; border-left:1px solid black; border-radius:10px 10px 3px 3px;
+}
+.eyesInside{
+  font-size: 9px; width:28px; height:20px; line-height: 20px;
+  color:black; position:absolute; display: flex; margin-top: 20px;
+}
+.eye1{
+  width:12px; height:8px; line-height: 8px;
+  border-radius: 6px/4px; text-align: center; background:white;
+}
+.eye2{
+  width:12px; height:8px; line-height: 8px; margin-left:3px;
+  border-radius: 6px/4px; background:white; text-align: center;
+}
+.nose{
+  font-size:18px; width:40px; height:17px; line-height: 12px; background:gray; display: flex; justify-content: center; margin:auto;
+  border-right:1px solid black; border-left:1px solid black; border-radius:5px 5px 10px 10px;
+}
+.mouth{
+  font-size:20px; width:25px; height:14px; line-height: 5px; background:gray; position: relative; display: flex; justify-content: center; margin:auto;
+  border-bottom:1px solid black; border-right:1px solid black; border-left:1px solid black; border-radius:0 0 15px 15px;
+}
+.antens{
+   width:36px; height:7px; line-height:7px; font-size: 14px; display:block; margin:auto; text-align:center; color:gray;
+ }
+ .robotMessage{
+   padding-left:1vmin; padding-right:0.5vmin; padding-top:1vmin; padding-bottom:1vmin; margin-top:5px; margin-bottom:5px; margin-right:20px; margin-left: auto; opacity:0.8; position: relative; display:inline;
+   border-radius: 3vmin 3vmin 0px 3vmin; background:white; color:black; float:right; font-family: sans-serif;
+ }
+ .triangle{
+  position:absolute; bottom:0%; left:100%; width: 0; height: 0; border-top: 8px solid transparent; border-left: 12px solid white;
+ }
+ #messageContent{
+   display: inline;
+   opacity:0;
+ }
+ #messagePublic{
+   display: inline;
+ }
+ #robotQuest{
+   display:inline; position: absolute; justify-content: center; flex-direction: column; right: 0; bottom:0; z-index:1; font-family:serif;
+ }
+ #eyesQuest{
+   font-size:90px; width:72px; height:66px; line-height: 84px; background:gray; display: flex; justify-content: center; margin:auto;
+   border-top:1px solid black; border-right:1px solid black; border-left:1px solid black; border-radius:10px 10px 3px 3px;
+ }
+ #eyesInsideQuest{
+   font-size: 18px; width:56px; height:40px; line-height: 40px;
+   color:black; position:absolute; display: flex; margin-top: 40px;
+ }
+ #eye1Quest{
+   width:23px; height:16px; line-height: 16px; margin-left:0;
+   border-radius: 12px/8px; text-align: center; background:white;
+ }
+ #eye2Quest{
+   width:24px; height:16px; line-height: 16px; margin-left:7px;
+   border-radius: 12px/8px; background:white; text-align: center;
+ }
+ #noseQuest{
+   font-size:36px; width:80px; height:34px; line-height: 24px; background:gray; display: flex; justify-content: center; margin:auto;
+   border-right:1px solid black; border-left:1px solid black; border-radius:10px 10px 20px 20px;
+ }
+ #mouthQuest{
+   font-size:50px; width:50px; height:35px; line-height: 17px; background:gray; position: relative; display: flex; justify-content: center; margin:auto;
+   border-bottom:1px solid black; border-right:1px solid black; border-left:1px solid black; border-radius:0 0 20px 20px; font-size: 40px;
+ }
+ #antensQuest{
+    width:72px; height:14px; line-height:17px; font-size: 26px; display:block; margin:auto; text-align:center; color:gray;
+  }
+  #messageContentQuest{
+    display: inline;
+    opacity:0;
+    font-size:calc(2vmax + 3vmin);
+  }
+  #messagePublicQuest{
+    display: inline;
+    font-size:calc(2vmax + 3vmin);
+  }
+  #robContainer{
+    position:absolute; bottom:5vh; right:1vmin; left:1vmin; display: inline; z-index: 1;
+    transition-property: bottom, right;
+    transition-duration: 1s;
+  }
+@media screen and (min-width: 700px)  {
+  #messageContentQuest{
+    font-size:40px;
+  }
+  #messagePublicQuest{
+    display: inline;
+    font-size:40px;
+}
