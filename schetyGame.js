@@ -140,7 +140,7 @@ startStopSchety.onclick = function() {
            leftSiblings = countLeftSiblings(touched);
             document.addEventListener('touchmove', onMouseMove);
             document.addEventListener('touchend', onMouseUp);
-            
+        }
               function onMouseMove(event) {
                 let newLeft = event.clientX/schety.offsetWidth*100 - schety.getBoundingClientRect().left/schety.offsetWidth*100 - 2.5;
                 // Положение костяшки в конце и начале поля
