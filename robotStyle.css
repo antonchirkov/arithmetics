@@ -2,12 +2,12 @@
   display:inline; position: relative; justify-content: center; flex-direction: column; width:70px; margin-right: 8px;  color:black; font-family:serif;
 }
 .eyes{position:relative;
-  font-size:45px; width:37px; height:33px; line-height: 42px; background:yellow; display: flex; justify-content: center; margin:auto;
+  font-size:45px; width:37px; height:33px; line-height: 42px; background:gray; display: flex; justify-content: center; margin:auto;
   border-top:1px solid black; border-right:1px solid black; border-left:1px solid black; border-radius:10px 10px 3px 3px;
 }
 .eyesInside{position:absolute;
   font-size: 9px; width:28px; height:20px; line-height: 20px;
-  color:black; display: flex; margin-top: 20px;
+  color:black; display: flex; top: 10px;
 }
 .eye1{position:relative;
   width:12px; height:8px; line-height: 8px;
