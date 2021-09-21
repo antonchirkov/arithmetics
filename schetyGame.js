@@ -153,7 +153,7 @@ startStopSchety.onclick = function() {
   function onMouseUp() {
       document.removeEventListener('touchend', onMouseUp);
       document.removeEventListener('touchmove', onMouseMove);
-  }}}
+  }}
 function moveSiblingsSchety (touched, newLeft)
               {
                     //  Правый сосед
