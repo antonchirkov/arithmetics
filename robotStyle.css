@@ -7,7 +7,7 @@
 }
 .eyesInside{position:absolute;
   font-size: 9px; width:28px; height:20px; line-height: 20px;
-  color:black; display: flex; top: 10px;
+  color:black; display: flex; top: 20px;
 }
 .eye1{position:relative;
   width:12px; height:8px; line-height: 8px;
