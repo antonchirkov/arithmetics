@@ -138,7 +138,7 @@ startStopSchety.onclick = function() {
            leftSiblings = countLeftSiblings(touched);
             document.addEventListener('touchmove', onMouseMove);
             document.addEventListener('touchend', onMouseUp);
-}
+
 function onMouseMove(event) {
     // Считываем координату X курсора относительно поля счетов
     let newLeft = event.changedTouches[event.changedTouches.length-1].pageX/schety.offsetWidth * 100 - schety.getBoundingClientRect().left/schety.offsetWidth * 100 - 2.5;
@@ -151,7 +151,7 @@ function onMouseMove(event) {
   function onMouseUp() {
       document.removeEventListener('touchend', onMouseUp);
       document.removeEventListener('touchmove', onMouseMove);
-  }}
+  }}}
 function moveSiblingsSchety (touched, newLeft)
               {
                     //  Правый сосед
