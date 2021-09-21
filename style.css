@@ -53,11 +53,11 @@ outline: none;
     box-shadow: inset 2vmin  0 13px -1.3vmin, inset -2vmin 0 13px -1.3vmin;
 }
 #schety {
-    width: 90%; max-width: 700px; height: 74vh;
+    width: 90%; max-width: 700px; height: 78vh;
     background:#f0f2fa; display: flex; flex-direction: column; margin-left:auto; margin-right:auto; position: relative;
 }
 #border{
-    width: 100vw; max-width: 750px; height: 81vh; position: relative;
+    width: 100vw; max-width: 750px; height: 85vh; position: relative;
     background: #7f582b; display:none; align-items: center; margin-left:auto; margin-right:auto;
 }
 #actionSchety{
