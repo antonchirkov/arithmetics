@@ -115,6 +115,12 @@ startStopSchety.onclick = function() {
             document.addEventListener('mouseup', onMouseUp);
             }
 
+            function onMouseUp() {
+                document.removeEventListener('mouseup', onMouseUp);
+                document.removeEventListener('mousemove', onMouseMove);
+            }
+          }
+
             function onMouseMove(event) {
                 let newLeft = event.clientX/schety.offsetWidth*100 - schety.getBoundingClientRect().left/schety.offsetWidth*100 - 2.5;
                 // Положение костяшки в конце и начале поля
@@ -123,11 +129,6 @@ startStopSchety.onclick = function() {
                 touched.style.left = newLeft + '%';
                 moveSiblingsSchety(touched, newLeft);
             }
-            function onMouseUp() {
-                document.removeEventListener('mouseup', onMouseUp);
-                document.removeEventListener('mousemove', onMouseMove);
-            }
-          }
       // Тач-девайс
       schety.ontouchstart = function (event){
           let touched = event.target;
@@ -139,15 +140,6 @@ startStopSchety.onclick = function() {
             document.addEventListener('touchmove', onMouseMove);
             document.addEventListener('touchend', onMouseUp);
 
-function onMouseMove(event) {
-    // Считываем координату X курсора относительно поля счетов
-    let newLeft = event.changedTouches[event.changedTouches.length-1].pageX/schety.offsetWidth * 100 - schety.getBoundingClientRect().left/schety.offsetWidth * 100 - 2.5;
-    // Положение костяшки в конце и начале поля
-    if (newLeft <= leftSiblings*5) newLeft = leftSiblings*5;
-    else if (newLeft >= 95 - rightSiblings*5) newLeft = 95 - rightSiblings*5;
-    touched.style.left = newLeft + '%';
-   moveSiblingsSchety(touched, newLeft);
-}
   function onMouseUp() {
       document.removeEventListener('touchend', onMouseUp);
       document.removeEventListener('touchmove', onMouseMove);
