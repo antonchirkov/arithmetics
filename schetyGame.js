@@ -141,7 +141,9 @@ startStopSchety.onclick = function() {
             document.addEventListener('touchmove', onMouseMove);
             document.addEventListener('touchend', onMouseUp);
         }
-              function onMouseMove(event) {
+  }
+
+            function onMouseMove(event) {
                 let newLeft = event.clientX/schety.offsetWidth*100 - schety.getBoundingClientRect().left/schety.offsetWidth*100 - 2.5;
                 // Положение костяшки в конце и начале поля
                 if (newLeft >= 95 - rightSiblings*5) newLeft = 95 - rightSiblings*5;
@@ -153,7 +155,7 @@ startStopSchety.onclick = function() {
   function onMouseUp() {
       document.removeEventListener('touchend', onMouseUp);
       document.removeEventListener('touchmove', onMouseMove);
-  }}
+  }
 function moveSiblingsSchety (touched, newLeft)
               {
                     //  Правый сосед
