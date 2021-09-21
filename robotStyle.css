@@ -45,13 +45,13 @@
  #robotQuest{
    display:inline; position: absolute; justify-content: center; flex-direction: column; right: 0; bottom:0; z-index:1; font-family:serif;
  }
- #eyesQuest{
+ #eyesQuest{position:relative;
    font-size:90px; width:72px; height:66px; line-height: 84px; background:gray; display: flex; justify-content: center; margin:auto;
    border-top:1px solid black; border-right:1px solid black; border-left:1px solid black; border-radius:10px 10px 3px 3px;
  }
- #eyesInsideQuest{
+ #eyesInsideQuest{position:absolute;
    font-size: 18px; width:56px; height:40px; line-height: 40px;
-   color:black; position:absolute; display: flex; margin-top: 40px;
+   color:black; position:absolute; display: flex; top: 40px;
  }
  #eye1Quest{
    width:23px; height:16px; line-height: 16px; margin-left:0;
