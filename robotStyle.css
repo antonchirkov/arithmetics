@@ -1,7 +1,7 @@
 .robot{
   display:inline; position: relative; justify-content: center; flex-direction: column; width:70px; margin-right: 8px;  color:black; font-family:serif;
 }
-.eyes{
+.eyes{position:relative;
   font-size:45px; width:37px; height:33px; line-height: 42px; background:gray; display: flex; justify-content: center; margin:auto;
   border-top:1px solid black; border-right:1px solid black; border-left:1px solid black; border-radius:10px 10px 3px 3px;
 }
