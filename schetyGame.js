@@ -40,8 +40,6 @@ function playerSchety(points, writeRecord){
             clearTimeout(timer);
             if (writeRecord) localStorage.setItem(userName+"recordSchety"+levelSchety.value, points + newPoints);
              else if (Number(localStorage.getItem(userName+"recordSchety"+levelSchety.value)) < points + newPoints) {
-               animation('animationRecord', 300, 1500);
-
                writeRecord=true;
                let newTodayDateSetted = localStorage.getItem(userName + 'todayDateSetted').split(',');
                newTodayDateSetted[2]='1';
