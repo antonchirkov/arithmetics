@@ -281,7 +281,7 @@ rightField.ontouchstart = function (event){
       document.addEventListener('touchend', onMouseUp);
   }
   function onMouseMove2(event) {
-    let newLeft = (event.changedTouches[event.changedTouches.length-1].pageX - rightField.getBoundingClientRect().left)/rightField.offsetWidth * 100 - 6.5;
+    let newLeft = (event.changedTouches[event.changedTouches.length-1].pageX - rightField.getBoundingClientRect().left)/rightField.offsetWidth * 100 - 17;
     if (newLeft >= 87- rightSiblings*13) newLeft = 87- rightSiblings*13;
     if (newLeft <= leftSiblings*13) newLeft = leftSiblings*13;
     touched.style.left = newLeft + '%';
