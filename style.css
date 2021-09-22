@@ -308,7 +308,7 @@ font-size:50px; color:red; z-index: 4;
 
 .falling{
 position:absolute; display:block; font-weight: bold;
-font-size:50px; color:red; z-index: 0;
+	color:white; z-index: 0;
 		-webkit-animation: falling 1.5s ease-in 1;
   animation: falling 1.5s ease-in 1;
 }
