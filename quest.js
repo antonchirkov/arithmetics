@@ -219,6 +219,7 @@ ciffer.className='falling';
 ciffer.style.left=randomInteger(0,100);
 ciffer.innerHTML=randomInteger(0,9);
   questContainer.append(ciffer);
+  setTimeout(()=>{body.removeChild(ciffer)},1500);
   if (Number(localStorage.getItem(userName+"messageStep"))<5) setTimeout(fall, 300);
 }
 function questNextStep(){
