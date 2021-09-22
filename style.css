@@ -314,8 +314,8 @@ font-size:50px; color:red; top:100; left:50%; z-index: 0;
 }
 
 @-webkit-keyframes falling {
-	from { top: 70%; }
-	to { top: -10%; }
+	from { top: 0%; }
+	to { top: 100%; }
 }
 #animationRecord{
 position:absolute; display:none;
