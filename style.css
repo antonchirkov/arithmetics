@@ -290,7 +290,7 @@ position:relative; display:flex; justify-content: center; margin-left:auto; marg
   animation: fly1 1300ms cubic-bezier(0.2, 0.2, 0.6, 1) 1 reverse;
 }
 #animationField{
-position:absolute; display:none; font-weight: bold;
+position:absolute; display:block; font-weight: bold;
 font-size:50px; color:red; top:50vh; left:50vw; opacity:1; z-index: 4;
 transition: all 1s ease-in;
 -webkit-transition: all 1s ease-in; /** Chrome & Safari **/ -moz-transition: all 1s ease-in; /** Firefox **/-o-transition: all 1s ease-in; /** Opera **/
