@@ -42,12 +42,12 @@ function playerSchety(points, writeRecord){
             if (writeRecord) localStorage.setItem(userName+"recordSchety"+levelSchety.value, points + newPoints);
              else if (Number(localStorage.getItem(userName+"recordSchety"+levelSchety.value)) < points + newPoints) {
                setTimeout(sound, 100, 87, 0.5);
-               setTimeout(sound, 400, 87, 0.5);
-               setTimeout(sound, 700, 87, 0.5);
+               setTimeout(sound, 300, 87, 0.5);
+               setTimeout(sound, 500, 87, 0.5);
                let animBlockRecord = document.createElement('div');
                animBlockRecord.innerHTML = "Рекорд!";
                animBlockRecord.className='animationField';
-               setTimeout(()=> border.prepend(animBlockRecord), 100);
+               setTimeout(()=> border.prepend(animBlockRecord), 200);
                setTimeout(()=>{border.removeChild(animBlockRecord)},1500);
                writeRecord=true;
                let newTodayDateSetted = localStorage.getItem(userName + 'todayDateSetted').split(',');
