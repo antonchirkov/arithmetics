@@ -308,14 +308,14 @@ font-size:50px; color:red; z-index: 4;
 
 .falling{
 position:absolute; display:block; font-weight: bold;
-font-size:50px; color:red; left:50%; z-index: 0;
+font-size:50px; color:red; z-index: 0;
 		-webkit-animation: falling 1.5s ease-in 1;
   animation: falling 1.5s ease-in 1;
 }
 
 @-webkit-keyframes falling {
 	from { top: 0%; }
-	to { top: 100%; }
+	to { top: 80%; }
 }
 #animationRecord{
 position:absolute; display:none;
