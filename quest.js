@@ -220,7 +220,7 @@ ciffer.style.fontSize=randomInteger(1,5)*10+'px';
 ciffer.innerHTML=randomInteger(0,9);
   questContainer.append(ciffer);
   setTimeout(()=>{questContainer.removeChild(ciffer)},1500);
-  if (Number(localStorage.getItem(userName+"messageStep"))<5 && Number(localStorage.getItem(userName+"messageStep") == stepNumber) setTimeout(fall, 200, stepNumber);
+  if (Number(localStorage.getItem(userName+"messageStep"))<5 && Number(localStorage.getItem(userName+"messageStep")) == stepNumber) setTimeout(fall, 200, stepNumber);
 }
 function questNextStep(){
   localStorage.setItem(userName+"messageStep", Number(localStorage.getItem(userName+"messageStep"))+2);
