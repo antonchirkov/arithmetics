@@ -48,9 +48,9 @@ function playerSchety(points, writeRecord){
              }
             let animBlock = document.createElement('div');
             animBlock.innerHTML = rightAnswer;
-            animBlock.classList.add('animationFieldStart');
+            animBlock.className = 'animationFieldStart';
             border.after(animBlock);
-            setTimeout(()=>{animBlock.classList.add('animationField'); animBlock.classList.remove('animationFieldStart')},1);
+            setTimeout(()=>{animBlock.className='animationField'},1);
             let newTodayDateSetted =localStorage.getItem(userName + 'todayDateSetted').split(',');
             newTodayDateSetted[1]=Number(newTodayDateSetted[1]) + Math.round(1/counter*100);
             localStorage.setItem(userName + 'todayDateSetted', newTodayDateSetted);
