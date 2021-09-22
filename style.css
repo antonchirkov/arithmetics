@@ -306,9 +306,16 @@ font-size:50px; color:red; z-index: 4;
   animation: right 1.5s ease-in 1;
 }
 
-.animationFieldStart{
+.falling{
 position:absolute; display:block; font-weight: bold;
-font-size:50px; color:red; top:100; left:50%; z-index: 4;
+font-size:50px; color:red; top:100; left:50%; z-index: 0;
+		-webkit-animation: falling 1.5s ease-in 1;
+  animation: falling 1.5s ease-in 1;
+}
+
+@-webkit-keyframes falling {
+	from { top: 70%; }
+	to { top: -10%; }
 }
 #animationRecord{
 position:absolute; display:none;
