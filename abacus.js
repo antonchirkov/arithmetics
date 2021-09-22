@@ -332,6 +332,7 @@ function calculateAbacusHorisontal(){
     }
     return answer;
 }
+// Горизонтальный десктоп
 downerField.onmousedown = function (event){
         let touched = event.target;
         let rightSiblings;
@@ -410,8 +411,8 @@ function moveSiblingsAbacusHorisontal(touched,newHeight){
           touched.style.top = newHeight + '%';
           moveSiblingsAbacusHorisontal(touched,newHeight);}
         function onMouseUp() {
-            document.removeEventListener('mouseup', onMouseUp);
-            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('touchend', onMouseUp);
+            document.removeEventListener('touchmove', onMouseMove);
     }}
     upperField.ontouchstart = function (event){
       let touched = event.target;
@@ -430,7 +431,7 @@ function moveSiblingsAbacusHorisontal(touched,newHeight){
         touched.style.top = newHeight + '%';
            }
            function onMouseUp() {
-               document.removeEventListener('mouseup', onMouseUp);
-               document.removeEventListener('mousemove', onMouseMove2);
+               document.removeEventListener('touchend', onMouseUp);
+               document.removeEventListener('touchmove', onMouseMove2);
        }
     }
