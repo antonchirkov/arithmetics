@@ -47,6 +47,7 @@ function playerSchety(points, writeRecord){
                localStorage.setItem(userName+"recordSchety"+levelSchety.value, points + newPoints);
              }
             let animBlock = document.createElement('div');
+            animBlock.id='animationField';
             animBlock.innerHTML = rightAnswer;
             animBlock.className = 'animationFieldStart';
             border.after(animBlock);
