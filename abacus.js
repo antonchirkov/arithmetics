@@ -243,16 +243,16 @@ leftfield.ontouchstart = function (event){
           moveSiblingsAbacus(touched, newLeft);
 }
         function onMouseUp() {
-            document.removeEventListener('mouseup', onMouseUp);
-            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('touchend', onMouseUp);
+            document.removeEventListener('touchmove', onMouseMove);
     }
          }
 
          rightField.ontouchstart = function (event){
                  let touched = event.target;
                  if (touched.className=="kost2"){
-                     document.addEventListener('mouseup', onMouseUp);
-                     document.addEventListener('mousemove', onMouseMove2);
+                     document.addEventListener('touchend', onMouseUp);
+                     document.addEventListener('touchmove', onMouseMove2);
                      }
                      function onMouseMove2(event) {
                        let newLeft = (event.clientX - rightField.getBoundingClientRect().left)* 100/rightField.offsetWidth - 17;
