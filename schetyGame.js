@@ -49,7 +49,7 @@ function playerSchety(points, writeRecord){
             let animBlock = document.createElement('div');
             animBlock.innerHTML = rightAnswer;
             animBlock.className='animationField';
-            schety.after(animBlock);
+            schety.append(animBlock);
             setTimeout(()=>{border.removeChild(animBlock)},1700);
             let newTodayDateSetted =localStorage.getItem(userName + 'todayDateSetted').split(',');
             newTodayDateSetted[1]=Number(newTodayDateSetted[1]) + Math.round(1/counter*100);
