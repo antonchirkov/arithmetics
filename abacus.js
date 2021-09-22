@@ -267,8 +267,8 @@ leftField.ontouchstart = function (event){
       moveSiblingsAbacus(touched, newLeft);
       }
     function onMouseUp() {
-        document.removeEventListener('mouseup', onMouseUp);
-        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('touchend', onMouseUp);
+        document.removeEventListener('touchmove', onMouseMove);
 }}
 rightField.ontouchstart = function (event){
   let touched = event.target;
@@ -287,8 +287,8 @@ rightField.ontouchstart = function (event){
     touched.style.left = newLeft + '%';
        }
     function onMouseUp() {
-      document.removeEventListener('mouseup', onMouseUp);
-      document.removeEventListener('mousemove', onMouseMove2);
+      document.removeEventListener('touchend', onMouseUp);
+      document.removeEventListener('touchmove', onMouseMove2);
    }
 }
 // Высчитывается результат абака
