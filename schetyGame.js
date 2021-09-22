@@ -47,7 +47,6 @@ function playerSchety(points, writeRecord){
                localStorage.setItem(userName+"recordSchety"+levelSchety.value, points + newPoints);
              }
              //анимация
-             sound(440, 0.5);
             let animBlock = document.createElement('div');
             animBlock.innerHTML = rightAnswer;
             animBlock.className='animationField';
