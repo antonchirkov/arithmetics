@@ -291,7 +291,7 @@ position:relative; display:flex; justify-content: center; margin-left:auto; marg
 }
 #animationField{
 position:absolute; display:block; font-weight: bold;
-font-size:50px; color:red; top:50vh; left:50vw; z-index: 4;
+font-size:50px; color:red; top:0; left:0; z-index: 4;
 transition: all 1s ease-in;
 -webkit-transition: all 1s ease-in; /** Chrome & Safari **/ -moz-transition: all 1s ease-in; /** Firefox **/-o-transition: all 1s ease-in; /** Opera **/
 }
