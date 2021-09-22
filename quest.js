@@ -216,6 +216,7 @@ function quest(){
 function fall(){
   let ciffer = document.createElement('div');
 ciffer.className='falling';
+ciffer.style.left=randomInteger(0,100);
 ciffer.innerHTML=randomInteger(0,9);
   questContainer.append(ciffer);
   if (Number(localStorage.getItem(userName+"messageStep"))<5) setTimeout(fall, 300);
