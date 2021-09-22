@@ -185,6 +185,8 @@ function setTaskAbacus(){
         return rightAnswer;
     }
 }
+
+//desktop
 leftField.onmousedown = function (event){
     let touched = event.target;
     let rightSiblings;
@@ -222,7 +224,46 @@ rightField.onmousedown = function (event){
                      document.removeEventListener('mouseup', onMouseUp);
                      document.removeEventListener('mousemove', onMouseMove2);
              }}
+             // Тач-девайс
+leftfield.ontouchstart = function (event){
+  let touched = event.target;
+  let rightSiblings;
+  let leftSiblings;
+  if (touched.className=="kost1"){
+    rightSiblings = countRightSiblings(touched);
+    leftSiblings = countLeftSiblings(touched);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+        }
+      function onMouseMove(event) {
+          let newLeft = (event.clientX - leftField.getBoundingClientRect().left)*100/leftField.offsetWidth- 6.5;
+          if (newLeft <= leftSiblings*13) newLeft = leftSiblings*13;
+          else if (newLeft >= 87 - rightSiblings*13) newLeft = 87 - rightSiblings*13;
+          touched.style.left = newLeft + '%';
+          moveSiblingsAbacus(touched, newLeft);
+}
+        function onMouseUp() {
+            document.removeEventListener('mouseup', onMouseUp);
+            document.removeEventListener('mousemove', onMouseMove);
+    }
+         }
 
+         rightField.ontouchstart = function (event){
+                 let touched = event.target;
+                 if (touched.className=="kost2"){
+                     document.addEventListener('mouseup', onMouseUp);
+                     document.addEventListener('mousemove', onMouseMove2);
+                     }
+                     function onMouseMove2(event) {
+                       let newLeft = (event.clientX - rightField.getBoundingClientRect().left)* 100/rightField.offsetWidth - 17;
+                       if (newLeft <= 0) newLeft = 0;
+                       else if (newLeft >= 66) newLeft = 66;
+                       touched.style.left = newLeft + '%';
+                          }
+                       function onMouseUp() {
+                              document.removeEventListener('mouseup', onMouseUp);
+                              document.removeEventListener('mousemove', onMouseMove2);
+                      }}
 function moveSiblingsAbacus(touched,newLeft)
 {            //  Правый сосед
             let that = touched;
