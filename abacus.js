@@ -275,6 +275,8 @@ rightField.ontouchstart = function (event){
   let rightSiblings;
   let leftSiblings;
   if (touched.className=="kost2"){
+    rightSiblings = countRightSiblings(touched);
+    leftSiblings = countLeftSiblings(touched);
       document.addEventListener('touchmove', onMouseMove2);
       document.addEventListener('touchend', onMouseUp);
   }
