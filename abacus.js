@@ -282,8 +282,8 @@ rightField.ontouchstart = function (event){
   }
   function onMouseMove2(event) {
     let newLeft = (event.changedTouches[event.changedTouches.length-1].pageX - rightField.getBoundingClientRect().left)/rightField.offsetWidth * 100 - 17;
-    if (newLeft >= 87- rightSiblings*13) newLeft = 87- rightSiblings*13;
-    if (newLeft <= leftSiblings*13) newLeft = leftSiblings*13;
+    if (newLeft <= 0) newLeft = 0;
+    else if (newLeft >= 66) newLeft = 66;
     touched.style.left = newLeft + '%';
        }
     function onMouseUp() {
@@ -424,11 +424,10 @@ function moveSiblingsAbacusHorisontal(touched,newHeight){
         document.addEventListener('touchend', onMouseUp);
       }
       function onMouseMove2(event) {
-        let newHeight = (event.changedTouches[event.changedTouches.length-1].clientY - upperField.getBoundingClientRect().top) * 100/upperField.offsetHeight - 6.5;
+        let newHeight = (event.changedTouches[event.changedTouches.length-1].clientY - upperField.getBoundingClientRect().top) * 100/upperField.offsetHeight - 20;
         if (newHeight >  87 - rightSiblings*13) newHeight = 87 - rightSiblings*13 ;
-        if (newLeft <= 0) newLeft = 0;
-        else if (newLeft >= 66) newLeft = 66;
-        touched.style.left = newLeft + '%';
+        if (newHeight < leftSiblings*13) newHeight = leftSiblings*13;
+        touched.style.top = newHeight + '%';
            }
            function onMouseUp() {
                document.removeEventListener('mouseup', onMouseUp);
