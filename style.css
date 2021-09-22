@@ -301,7 +301,9 @@ position:absolute; display:block; font-weight: bold;
 }
 .animationField{
 position:absolute; display:block; font-weight: bold;
-font-size:50px; color:red; top:0; left:50%; z-index: 4;
+font-size:50px; color:red; z-index: 4;
+	-webkit-animation: right 2s ease-in 1;
+  animation: right 2s ease-in 1;
 }
 
 .animationFieldStart{
