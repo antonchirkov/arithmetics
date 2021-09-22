@@ -295,6 +295,13 @@ font-size:50px; color:red; top:0; left:50%; z-index: 4;
 transition: all 1s ease-in;
 -webkit-transition: all 1s ease-in; /** Chrome & Safari **/ -moz-transition: all 1s ease-in; /** Firefox **/-o-transition: all 1s ease-in; /** Opera **/
 }
+
+.animationFieldStart{
+position:absolute; display:block; font-weight: bold;
+font-size:50px; color:red; top:100; left:50%; z-index: 4;
+transition: all 1s ease-in;
+-webkit-transition: all 1s ease-in; /** Chrome & Safari **/ -moz-transition: all 1s ease-in; /** Firefox **/-o-transition: all 1s ease-in; /** Opera **/
+}
 #animationRecord{
 position:absolute; display:none;
 color:#913630; opacity:1; font-size:30px; top:50vh; left:50vw; opacity:1;z-index: 3;
