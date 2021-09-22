@@ -41,9 +41,9 @@ function playerSchety(points, writeRecord){
             clearTimeout(timer);
             if (writeRecord) localStorage.setItem(userName+"recordSchety"+levelSchety.value, points + newPoints);
              else if (Number(localStorage.getItem(userName+"recordSchety"+levelSchety.value)) < points + newPoints) {
-               setTimeout(sound, 100, 87, 0.5);
-               setTimeout(sound, 300, 87, 0.5);
-               setTimeout(sound, 500, 87, 1.5);
+               setTimeout(sound, 100, 187, 0.5);
+               setTimeout(sound, 300, 320, 0.5);
+               setTimeout(sound, 500, 440, 1.5);
                let animBlockRecord = document.createElement('div');
                animBlockRecord.innerHTML = "Рекорд!";
                animBlockRecord.className='animationField';
