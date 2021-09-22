@@ -46,9 +46,9 @@ function playerSchety(points, writeRecord){
                setTimeout(sound, 700, 87, 0.5);
                let animBlockRecord = document.createElement('div');
                animBlockRecord.innerHTML = "Рекорд!";
-               animBlock.className='animationField';
-               setTimeout(()=> border.prepend(animBlock), 100);
-               setTimeout(()=>{border.removeChild(animBlock)},1500);
+               animBlockRecord.className='animationField';
+               setTimeout(()=> border.prepend(animBlockRecord), 100);
+               setTimeout(()=>{border.removeChild(animBlockRecord)},1500);
                writeRecord=true;
                let newTodayDateSetted = localStorage.getItem(userName + 'todayDateSetted').split(',');
                newTodayDateSetted[2]='1';
