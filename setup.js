@@ -25,7 +25,6 @@ if (localStorage.getItem('matematika-user-name')){
     }}
   else{
     container.style.display='flex';
-    conpyright.style.display="block";
   }
 }
 function login(){
