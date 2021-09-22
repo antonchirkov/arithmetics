@@ -46,9 +46,7 @@ function playerSchety(points, writeRecord){
                localStorage.setItem(userName + 'todayDateSetted', newTodayDateSetted);
                localStorage.setItem(userName+"recordSchety"+levelSchety.value, points + newPoints);
              }
-            animationField.style.display='block';
-            animationField.innerHTML= rightAnswer;
-            animation('animationField', 100, 1000);
+            sound(440, 1);
             let newTodayDateSetted =localStorage.getItem(userName + 'todayDateSetted').split(',');
             newTodayDateSetted[1]=Number(newTodayDateSetted[1]) + Math.round(1/counter*100);
             localStorage.setItem(userName + 'todayDateSetted', newTodayDateSetted);
