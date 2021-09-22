@@ -198,7 +198,7 @@ leftField.onmousedown = function (event){
       document.addEventListener('mouseup', onMouseUp);
           }
         function onMouseMove(event) {
-            let newLeft = (event.clientX- leftField.getBoundingClientRect().left)*100/leftField.offsetWidth- 6.5;
+            let newLeft = (event.pageX- leftField.getBoundingClientRect().left)*100/leftField.offsetWidth- 6.5;
             if (newLeft <= leftSiblings*13) newLeft = leftSiblings*13;
             else if (newLeft >= 87 - rightSiblings*13) newLeft = 87 - rightSiblings*13;
             touched.style.left = newLeft + '%';
@@ -215,7 +215,7 @@ rightField.onmousedown = function (event){
             document.addEventListener('mousemove', onMouseMove2);
             }
             function onMouseMove2(event) {
-              let newLeft = (event.clientX - rightField.getBoundingClientRect().left)* 100/rightField.offsetWidth - 17;
+              let newLeft = (event.pageX- rightField.getBoundingClientRect().left)* 100/rightField.offsetWidth - 17;
               if (newLeft <= 0) newLeft = 0;
               else if (newLeft >= 66) newLeft = 66;
               touched.style.left = newLeft + '%';
@@ -260,7 +260,7 @@ leftField.ontouchstart = function (event){
           document.addEventListener('touchend', onMouseUp);
         }
   function onMouseMove(event) {
-      let newLeft = event.changedTouches[event.changedTouches.length-1].clientX - leftField.getBoundingClientRect().left/document.documentElement.clientWidth * 100 - 6.5;
+      let newLeft = (event.changedTouches[event.changedTouches.length-1].pageX - leftField.getBoundingClientRect().left)/leftField.clientWidth * 100 - 6.5;
       if (newLeft <= leftSiblings*13) newLeft = leftSiblings*13;
       else if (newLeft >= 87 - rightSiblings*13) newLeft = 87 - rightSiblings*13;
       touched.style.left = newLeft + '%';
@@ -279,7 +279,7 @@ rightField.ontouchstart = function (event){
       document.addEventListener('touchend', onMouseUp);
   }
   function onMouseMove2(event) {
-    let newLeft = event.changedTouches[event.changedTouches.length-1].clientX - rightField.getBoundingClientRect().left/rightField.clientWidth * 100 - 6.5;
+    let newLeft = (event.changedTouches[event.changedTouches.length-1].pageX - rightField.getBoundingClientRect().left)/rightField.clientWidth * 100 - 6.5;
     if (newLeft >= 87- rightSiblings*13) newLeft = 87- rightSiblings*13;
     if (newLeft <= leftSiblings*13) newLeft = leftSiblings*13;
     touched.style.left = newLeft + '%';
