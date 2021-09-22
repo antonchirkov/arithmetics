@@ -426,8 +426,8 @@ function moveSiblingsAbacusHorisontal(touched,newHeight){
       }
       function onMouseMove2(event) {
         let newHeight = (event.changedTouches[event.changedTouches.length-1].clientY - upperField.getBoundingClientRect().top) * 100/upperField.offsetHeight - 20;
-        if (newHeight >  87 - rightSiblings*13) newHeight = 87 - rightSiblings*13 ;
-        if (newHeight < leftSiblings*13) newHeight = leftSiblings*13;
+        if (newHeight < 0) newHeight = 0;
+        else if (newHeight > 60) newHeight = 60;
         touched.style.top = newHeight + '%';
            }
            function onMouseUp() {
