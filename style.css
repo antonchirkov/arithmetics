@@ -292,7 +292,7 @@ position:relative; display:flex; justify-content: center; margin-left:auto; marg
 #animationField{
 position:absolute; display:block; font-weight: bold; opacity:0.5;
   -webkit-animation: right 1s ease-in 1;
-  animation: right 2s ease-in 1;
+  animation: right 1s ease-in 1;
 }
 
 @-webkit-keyframes right {
