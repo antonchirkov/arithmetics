@@ -51,6 +51,7 @@ function playerSchety(points, writeRecord){
             animBlock.innerHTML = rightAnswer;
             animBlock.className='animationField';
             border.prepend(animBlock);
+            sound(440, 0.5);
             setTimeout(()=>{border.removeChild(animBlock)},1500);
             //база
             let newTodayDateSetted =localStorage.getItem(userName + 'todayDateSetted').split(',');
