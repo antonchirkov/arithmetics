@@ -36,6 +36,7 @@ function playerSchety(points, writeRecord){
         counter++;
         let answer = calculateSchety();
         if (rightAnswer == answer) {
+          sound(440, 0.5);
           let newPoints = Math.round(1/counter*100);
             clearTimeout(timer);
             if (writeRecord) localStorage.setItem(userName+"recordSchety"+levelSchety.value, points + newPoints);
@@ -51,7 +52,6 @@ function playerSchety(points, writeRecord){
             animBlock.innerHTML = rightAnswer;
             animBlock.className='animationField';
             border.prepend(animBlock);
-            sound(440, 0.5);
             setTimeout(()=>{border.removeChild(animBlock)},1500);
             //база
             let newTodayDateSetted =localStorage.getItem(userName + 'todayDateSetted').split(',');
