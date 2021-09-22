@@ -83,7 +83,6 @@ function quest(){
     'Поэтому если ты несколько раз нажмешь быстро "шаг назад" - это меня может сильно смутить.',
     'Удачи!',
   ]
-  console.log(stepNumber);
   borderQuest.style.display = stepNumber>3 && stepNumber<17 ? 'flex': 'none';
   mentalGame.style.display=stepNumber>25  && stepNumber<33 ? 'block': 'none';
   mentalButtonsQuest.style.display=(stepNumber==26 || stepNumber==30)? 'block': 'none';
@@ -95,6 +94,7 @@ function quest(){
   stepNumber==40 ? setTimeout(() =>{if(Number(localStorage.getItem(userName+"messageStep"))==40)questContainer.querySelectorAll('.fingers').forEach(element => {element.style.display = 'block';})}, 500) : questContainer.querySelectorAll('.fingers').forEach(element => {element.style.display = 'none';});
   if (stepNumber>40 && stepNumber<48 || stepNumber>64) levelCenter.innerHTML='Квест-3';
   if (stepNumber<5) levelCenter.innerHTML='Квест-1';
+  if (stepNumber<5 && stepNumber>1) {fall();}
   if (stepNumber>48 && stepNumber<56) playerAbacusQuest(0);
   stepBack.style.display = stepNumber > 0 ? 'inline-flex' : 'none';
   robContainer.querySelector(".robotMessage").style.marginBottom = stepNumber == 40 ? '17px': '5px';
@@ -212,6 +212,13 @@ function quest(){
     eyeUpTimeout = setTimeout(() =>{eye1Quest.style.lineHeight='10px'; eye2Quest.style.lineHeight='10px';}, message[stepNumber].length*250+2500 + message[stepNumber+1].length*100);
     eyeMiddleTimeout = setTimeout(() =>{eye1Quest.style.lineHeight='16px'; eye2Quest.style.lineHeight='16px';}, message[stepNumber].length*250+3500 + message[stepNumber+1].length*100);
   }
+}
+function fall(){
+  let ciffer = document.createElement('div');
+ciffer.className='falling';
+ciffer.innerHTML=randomInteger(0,9);
+  questContainer.append(ciffer);
+  if (Number(localStorage.getItem(userName+"messageStep"))<5) setTimeout(fall, 300);
 }
 function questNextStep(){
   localStorage.setItem(userName+"messageStep", Number(localStorage.getItem(userName+"messageStep"))+2);
