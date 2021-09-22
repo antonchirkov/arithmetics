@@ -296,7 +296,7 @@ position:absolute; display:block; font-weight: bold; opacity:0.5;
 }
 
 @-webkit-keyframes right {
-	from { top: 100%; }
+	from { top: 70%; }
 	to { top: -10%; }
 }
 .animationField{
