@@ -300,7 +300,7 @@ position:absolute; display:block; font-weight: bold; opacity:0.5;
 	to { top: -10%; }
 }
 .animationField{
-position:absolute; display:block; left:50%; font-weight: bold;
+position:absolute; display:block; left:50%; font-weight: bold;opacity:0.5;
 font-size:50px; color:red; z-index: 4;
 	-webkit-animation: right 1.5s ease-in 1;
   animation: right 1.5s ease-in 1;
