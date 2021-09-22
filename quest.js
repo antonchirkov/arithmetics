@@ -93,7 +93,7 @@ function quest(){
   abacusQuest.style.display=(stepNumber>45 && stepNumber<67) ? 'flex':'none';
   stepNumber==40 ? setTimeout(() =>{if(Number(localStorage.getItem(userName+"messageStep"))==40)questContainer.querySelectorAll('.fingers').forEach(element => {element.style.display = 'block';})}, 500) : questContainer.querySelectorAll('.fingers').forEach(element => {element.style.display = 'none';});
   if (stepNumber>40 && stepNumber<48 || stepNumber>64) levelCenter.innerHTML='Квест-3';
-  if (stepNumber<5) {levelCenter.innerHTML='Квест-1'; fall();}
+  if (stepNumber<5) {levelCenter.innerHTML='Квест-1'; fall(stepNumber);}
   if (stepNumber>48 && stepNumber<56) playerAbacusQuest(0);
   stepBack.style.display = stepNumber > 0 ? 'inline-flex' : 'none';
   robContainer.querySelector(".robotMessage").style.marginBottom = stepNumber == 40 ? '17px': '5px';
@@ -212,7 +212,7 @@ function quest(){
     eyeMiddleTimeout = setTimeout(() =>{eye1Quest.style.lineHeight='16px'; eye2Quest.style.lineHeight='16px';}, message[stepNumber].length*250+3500 + message[stepNumber+1].length*100);
   }
 }
-function fall(){
+function fall(stepNumber){
   let ciffer = document.createElement('div');
 ciffer.className='falling';
 ciffer.style.left=randomInteger(0,80)+'%';
@@ -220,7 +220,7 @@ ciffer.style.fontSize=randomInteger(1,5)*10+'px';
 ciffer.innerHTML=randomInteger(0,9);
   questContainer.append(ciffer);
   setTimeout(()=>{questContainer.removeChild(ciffer)},1500);
-  if (Number(localStorage.getItem(userName+"messageStep"))<5) setTimeout(fall, 200);
+  if (Number(localStorage.getItem(userName+"messageStep"))<5 && Number(localStorage.getItem(userName+"messageStep") == stepNumber) setTimeout(fall, 200, stepNumber);
 }
 function questNextStep(){
   localStorage.setItem(userName+"messageStep", Number(localStorage.getItem(userName+"messageStep"))+2);
