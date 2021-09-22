@@ -93,8 +93,7 @@ function quest(){
   abacusQuest.style.display=(stepNumber>45 && stepNumber<67) ? 'flex':'none';
   stepNumber==40 ? setTimeout(() =>{if(Number(localStorage.getItem(userName+"messageStep"))==40)questContainer.querySelectorAll('.fingers').forEach(element => {element.style.display = 'block';})}, 500) : questContainer.querySelectorAll('.fingers').forEach(element => {element.style.display = 'none';});
   if (stepNumber>40 && stepNumber<48 || stepNumber>64) levelCenter.innerHTML='Квест-3';
-  if (stepNumber<5) levelCenter.innerHTML='Квест-1';
-  if (stepNumber<5 && stepNumber>1) {fall();}
+  if (stepNumber<5) {levelCenter.innerHTML='Квест-1'; fall();}
   if (stepNumber>48 && stepNumber<56) playerAbacusQuest(0);
   stepBack.style.display = stepNumber > 0 ? 'inline-flex' : 'none';
   robContainer.querySelector(".robotMessage").style.marginBottom = stepNumber == 40 ? '17px': '5px';
